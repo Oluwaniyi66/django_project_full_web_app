@@ -1,0 +1,1 @@
+# django_project_full_web_app
