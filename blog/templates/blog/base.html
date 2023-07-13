@@ -58,8 +58,6 @@
     <main role="main" class="container">
       <div class="row">
         <div class="col-md-8">
-          
-          
           {% if messages %}
 
             {% for message in messages %}
@@ -69,11 +67,10 @@
             {% endfor %}
             
           {% endif %}
-            
 
           {% block content %}
 
-            {% endblock %}
+          {% endblock %}
         </div>
         <div class="col-md-4">
           <div class="content-section">
