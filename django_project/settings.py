@@ -22,12 +22,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-53lrcfob5gn^nj^sz(rb#h-+v3-ou@f6kgwbxp-@(i=bp!yn--'
+# SECRET_KEY = 'django-insecure-53lrcfob5gn^nj^sz(rb#h-+v3-ou@f6kgwbxp-@(i=bp!yn--'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['flexblog-07aa49d1d786.herokuapp.com']
 
 
 # Application definition
@@ -122,6 +123,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
+MEDIA_ROOT = os.path.join(BASE_DIR,'staticfiles')
 STATIC_URL = 'static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
@@ -150,6 +152,8 @@ EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')
 AWS_ACCESS_KEY_ID = os.environ.get('ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = os.environ.get('SECRET_ACCESS_KEY')
 AWS_STORAGE_BUCKET_NAME = os.environ.get('STORAGE_BUCKET_NAME')
+SECRET_KEY = os.environ.get('SECRET_KEY')
+DEBUG_VALUE = "True"
 
 
 
