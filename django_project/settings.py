@@ -11,7 +11,11 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 import os
+import django_on_heroku
+
 from pathlib import Path
+
+
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -163,3 +167,5 @@ AWS_S3_REGION_NAME = 'eu-west-2' # Your region name
 AWS_S3_SIGNATURE_VERSION = 's3v4'
 DEFAULT_FILE_STORAGE ='storages.backends.s3boto3.S3Boto3Storage'
 AWS_QUERYSTRING_AUTH = False
+
+django_on_heroku.settings(locals())
