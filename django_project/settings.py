@@ -30,9 +30,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = (os.environ.get('DEBUG_VALUE') == 'True')
 
-ALLOWED_HOSTS = ['flexblog-07aa49d1d786.herokuapp.com']
+ALLOWED_HOSTS = ['http://127.0.0.1:8000/','flexblog-07aa49d1d786.herokuapp.com']
 
 
 # Application definition
@@ -127,13 +127,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-MEDIA_ROOT = os.path.join(BASE_DIR,'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 STATIC_URL = 'static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 MEDIA_URL = '/media/'
 
-# CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
@@ -157,7 +156,7 @@ AWS_ACCESS_KEY_ID = os.environ.get('ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = os.environ.get('SECRET_ACCESS_KEY')
 AWS_STORAGE_BUCKET_NAME = os.environ.get('STORAGE_BUCKET_NAME')
 SECRET_KEY = os.environ.get('SECRET_KEY')
-DEBUG_VALUE = "True"
+DEBUG_VALUE = os.environ.get('DEBUG_VALUE')
 
 
 
