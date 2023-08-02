@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 import os
 import django_on_heroku
-
 from pathlib import Path
 
 
@@ -57,6 +56,7 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
@@ -166,5 +166,8 @@ AWS_S3_REGION_NAME = 'eu-west-2' # Your region name
 AWS_S3_SIGNATURE_VERSION = 's3v4'
 DEFAULT_FILE_STORAGE ='storages.backends.s3boto3.S3Boto3Storage'
 AWS_QUERYSTRING_AUTH = False
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 
 django_on_heroku.settings(locals())
