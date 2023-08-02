@@ -4,8 +4,8 @@
     
           <article class="media content-section">
             
-            <img class="rounded-circle article-img" src="{ static post.author.profile.image.url } alt="{{ post.author }}">
-            
+            <img class="rounded-circle article-img" src="{% static post.author.profile.image.url %}" alt="{{ post.author }}">
+
             <div class="media-body">
               <div class="article-metadata">
                 <a class="mr-3" href="{% url 'user-posts' post.author.username %}">{{ post.author }}</a>
